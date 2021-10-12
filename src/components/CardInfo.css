@@ -1,0 +1,73 @@
+.background {
+    
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: #801B1B1B;
+}
+
+.background:hover {
+    cursor:pointer;
+}
+
+.cardmodal {
+    display: flex;
+    justify-content: center;
+    width: 900px;
+    padding: 30px;
+    background: #FFFFFF;
+
+    border-radius: 50px;
+    border: 5px solid pink;
+}
+
+.cardmodal:hover {
+    cursor: initial;
+}
+
+.cardinfo {
+    width: 300px;
+    margin: 0 auto;
+}
+
+.cardparameter {
+    justify-content: space-evenly;
+    
+}
+
+.parameter {
+    text-align: right;
+}
+
+.cardimg {
+    border: 5px solid pink;
+}
+
+.cardparameter {
+    display: flex;
+}
+
+.cardparameter p {
+    font-size: 12px;
+    margin: 20px 0;
+}
+
+.cardparameter .min {
+    width: 60px;
+}
+
+.cardparameter .max {
+    width: 60px;
+}
+
+.cardparameter .trained {
+    width: 60px;
+}

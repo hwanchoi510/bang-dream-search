@@ -1,0 +1,13 @@
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100px;
+    margin: auto;
+    border-radius: 8px;
+}
+
+.image:hover {
+    cursor: pointer;
+}
