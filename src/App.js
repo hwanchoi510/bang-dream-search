@@ -29,13 +29,16 @@ function App() {
     setcards(cardlist.concat(cards));
   }
 
-  useEffect(() => getCards(), []);
+  useEffect(() => {
+    // other code
+    getCards()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+ }, []) 
 
   return (
     <div className="App">
       <div className="Header">
-        <h1 className="AppName">BangDream Card Search</h1>
-        <input className="SearchBar"></input>
+        <h1 className="AppName">BangDream Card DB</h1>
         <div className="Rarity">
           <h3>Rarity</h3>
           <input type="checkbox"></input>

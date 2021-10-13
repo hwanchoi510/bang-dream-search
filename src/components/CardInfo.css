@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500&family=Varela+Round&display=swap');
+
 .background {
     
     position: fixed;
@@ -11,7 +14,9 @@
     align-items: center;
     width: 100%;
     height: 100%;
-    background: #801B1B1B;
+    background: #1B1B1BE6;
+
+    
 }
 
 .background:hover {
@@ -27,6 +32,8 @@
 
     border-radius: 50px;
     border: 5px solid pink;
+
+    font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
 .cardmodal:hover {
@@ -36,6 +43,15 @@
 .cardinfo {
     width: 300px;
     margin: 0 auto;
+}
+
+.cardtype {
+    display: grid;
+    grid-template-columns: 180px 60px 100px;
+}
+
+.cardtype img{
+    height: 40px;
 }
 
 .cardparameter {

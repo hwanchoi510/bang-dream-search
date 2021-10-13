@@ -8,7 +8,7 @@ export default function Card( { card }) {
 
     return (
         <div className="card">
-            <img className="card image" onClick={() => SetShowInfo(showinfo => !showinfo)} src={(card["image_trained"] != null) ? card["image_trained"] : card["image"]}/>
+            <img className="card image" onClick={() => SetShowInfo(showinfo => !showinfo)} src={(card["image_trained"] != null) ? card["image_trained"] : card["image"]} alt="Thumbnail"/>
             <CardInfo card={card} showinfo={showinfo} SetShowInfo={SetShowInfo} />
         </div>
     );
