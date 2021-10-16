@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import GetCards from './components/GetCards.js'
 import Card from './components/Card.js'
-import background from './bg.png'
 import './App.css'
 
 
@@ -15,15 +14,6 @@ function App() {
     error,
     cards,
     hasMore } = GetCards(page)
-
-  function handleGetCards(e) {
-    setpage(0)
-  }
-
-  function setBackground() {
-    document.body.style.backgroundImage = `url(${background})`
-    document.body.style.backgroundSize = "cover"
-  }
 
   function endOfPage() {
     setpage(page + 1)

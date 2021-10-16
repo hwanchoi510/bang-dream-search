@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import {useState, useEffect} from 'react'
 import Axios from 'axios'
 
 export default function GetCards( page) {
@@ -30,7 +30,7 @@ export default function GetCards( page) {
             }
         }
         getData()
-    }, [page])
+    }, [page, hasMore])
     
     
     return { loading, error, cards, hasMore}
