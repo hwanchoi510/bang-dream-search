@@ -1,39 +1,41 @@
-import React, {useState, useEffect} from 'react';
-import Axios from 'axios';
-import Cards from './components/Cards.js';
-import './App.css';
+import React, {useState} from 'react'
+import GetCards from './components/GetCards.js'
+import Card from './components/Card.js'
+import background from './bg.png'
+import './App.css'
+
 
 function App() {
 
   // api = "https://bandori.party/api/" 
-  const [cardlist, setcards] = useState([]);
-  var [page, setpage] = useState(1);
-  
-  async function getCards() {
+  const [page, setpage] = useState(0)
 
-    var cards = [];
-    var set = await Axios.get(`https://bandori.party/api/cards/?page=${page}`);
-    var i = 0;
-    if(set != null){
-      while(i < 7){
-        if(set.data.next != null){
-          page++;
-          cards = cards.concat(set.data.results);
-          set = await Axios.get(`https://bandori.party/api/cards/?page=${page}`);
-        }
-        i++;
-      }
-      setpage(page);
-    }
-    
-    setcards(cardlist.concat(cards));
+  const { 
+    loading,
+    error,
+    cards,
+    hasMore } = GetCards(page)
+
+  function handleGetCards(e) {
+    setpage(0)
   }
 
-  useEffect(() => {
-    // other code
-    getCards()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
- }, []) 
+  function setBackground() {
+    document.body.style.backgroundImage = `url(${background})`
+    document.body.style.backgroundSize = "cover"
+  }
+
+  function endOfPage() {
+    setpage(page + 1)
+  }
+
+  window.onscroll = function () {
+    if(
+      window.innerHeight + document.documentElement.scrollTop === document.documentElement.offsetHeight &&
+      hasMore && !loading
+    ) endOfPage()
+  }
+
 
   return (
     <div className="App">
@@ -67,8 +69,14 @@ function App() {
           <input type="checkbox"></input>
           <input type="checkbox"></input>
         </div>
-        <Cards cards={cardlist} />
       </div>
+      <div className="Cards">
+          {cards.map((card, index) => {
+            return <Card card={card} key={card['id']}/>
+          })} 
+      </div> 
+      <div>{loading && 'Loading..'}</div>
+      <div>{error && 'Error'}</div>
     </div>
   );
 }

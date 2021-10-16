@@ -4,7 +4,7 @@ import "./Card.css";
 
 export default function Card( { card }) {
 
-    const [showinfo, SetShowInfo] = useState(false); 
+    const [showinfo, SetShowInfo] = useState(false)
 
     return (
         <div className="card">
