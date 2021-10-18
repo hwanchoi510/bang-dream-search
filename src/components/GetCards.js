@@ -22,7 +22,7 @@ export default function GetCards( page) {
                     setCards(prevCards => {
                         return [...prevCards, ...res.data.results]
                     })
-                    setHasMore(res.data.results.length > 0)
+                    setHasMore(res.data.next !== null)
                     setLoading(false)
                 }).catch(e => {
                     setError(true)
