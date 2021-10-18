@@ -1,5 +1,5 @@
 body {
-    background: url('./bg.png') no-repeat center center fixed;
+    background: url('./assets/bg.png') no-repeat center center fixed;
     margin: 0;
 }
 
@@ -14,8 +14,8 @@ body {
     margin: auto auto;
     background-color: ghostwhite;
 
-    border: none;
-    border-color: pink;
+    border-right: pink 10px solid;
+    border-left: pink 10px solid;
     padding: 10px;
 }
 

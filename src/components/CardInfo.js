@@ -17,11 +17,22 @@ export default function CardInfo( {card, showinfo, SetShowInfo}) {
         return images;
     }
     const images = importAll(require.context('../assets', false, /\.(png|jpe?g|svg)$/));
+    
+    function changeImage(e) {
+        if(e.target.getAttribute("src") === card["art"]) {
+            if(card["art_trained"] != null) {
+                e.target.setAttribute('src', card["art_trained"]);
+            }
+        } else {
+            e.target.setAttribute('src', card["art"]);
+        }
+        console.log(card);
+    }
 
     return (showinfo ? 
         <div className="background" onClick={() => SetShowInfo(showinfo => !showinfo)}>
-            <div className="cardmodal"> 
-                <img className="cardimg" src={(card["art_trained"] != null) ? card["art_trained"] : card["art"]} alt="Cart Art"/>
+            <div className="cardmodal" onClick={(event) => event.stopPropagation()}> 
+                <img className="cardimg" src={card["art"]} alt="Cart Art" onClick={changeImage}/>
                 <div className="cardinfo">
                     <h3>[{card["japanese_name"]}] {names[card["member"]-6]}</h3>
                     <div className="cardtype">
@@ -62,6 +73,10 @@ export default function CardInfo( {card, showinfo, SetShowInfo}) {
                 </div>
                 
             </div>
-        </div> : null
+            <script type="text/javascript">
+            
+            </script> 
+        </div>
+        : null
     )
 }

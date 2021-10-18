@@ -31,7 +31,7 @@ function App() {
     <div className="App">
       <div className="Header">
         <h1 className="AppName">BangDream Card DB</h1>
-        <div className="Rarity">
+        {/* <div className="Rarity">
           <h3>Rarity</h3>
           <input type="checkbox"></input>
           <input type="checkbox"></input>
@@ -58,7 +58,7 @@ function App() {
           <input type="checkbox"></input>
           <input type="checkbox"></input>
           <input type="checkbox"></input>
-        </div>
+        </div> */}
       </div>
       <div className="Cards">
           {cards.map((card, index) => {
